@@ -18,7 +18,7 @@ app = FastAPI(title="ScamShield API", version="0.1.0")
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
-cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:3000,http://localhost:3001").split(",")
+cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:3003").split(",")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins if cors_origins != ["*"] else ["*"],
