@@ -77,3 +77,4 @@ else:
                 "model": "Unavailable",
                 "framework": "None",
             }
+# torch optional build
