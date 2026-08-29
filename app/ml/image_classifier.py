@@ -78,3 +78,5 @@ else:
                 "framework": "None",
             }
 # torch optional build
+
+# Vercel torch fix
