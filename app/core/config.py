@@ -1,4 +1,5 @@
 from pydantic_settings import BaseSettings
+import os
 
 
 class Settings(BaseSettings):
@@ -18,3 +19,8 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+if os.getenv("VERCEL"):
+    settings.storage_dir = "/tmp/scamshield-storage"
+elif settings.storage_dir.startswith("./"):
+    settings.storage_dir = os.path.abspath(settings.storage_dir)
